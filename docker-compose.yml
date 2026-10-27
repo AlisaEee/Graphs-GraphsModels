@@ -1,0 +1,17 @@
+services:
+  graph-chat:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: graph-rag-chat
+    ports:
+      - "8501:8501"
+    environment:
+      LLM_BASE_URL: ${LLM_BASE_URL:-http://host.docker.internal:1234/v1}
+      LLM_MODEL: ${LLM_MODEL:-qwen2.5-coder-14b-instruct}
+      LLM_API_KEY: ${LLM_API_KEY:-local}
+      GAT_DEVICE: cpu
+      TORCH_NUM_THREADS: 2
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    restart: unless-stopped

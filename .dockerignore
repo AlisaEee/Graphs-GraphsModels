@@ -1,0 +1,15 @@
+.git
+.gitignore
+**/__pycache__
+**/*.pyc
+**/.ipynb_checkpoints
+.venv
+
+graph_preprocess/*
+!graph_preprocess/C3_A4_posweight_model.pt
+!graph_preprocess/graphrag_preprocessed_rubert/
+graph_preprocess/graphrag_preprocessed_rubert/*
+!graph_preprocess/graphrag_preprocessed_rubert/output/
+graph_preprocess/graphrag_preprocessed_rubert/output/*
+!graph_preprocess/graphrag_preprocessed_rubert/output/entities.parquet
+!graph_preprocess/graphrag_preprocessed_rubert/output/relationships.parquet
